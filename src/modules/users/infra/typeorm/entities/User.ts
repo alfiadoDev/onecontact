@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Exclude } from 'class-transformer'
 import {
   Column,

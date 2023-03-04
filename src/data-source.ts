@@ -12,9 +12,9 @@ const options: DataSourceOptions & SeederOptions = {
     process.env.NODE_ENV === 'test'
       ? process.env.DB_TEST_NAME
       : process.env.DB_NAME,
-  entities: [`${__dirname}/modules/**/infra/typeorm/entities/*{.ts,.js}`],
-  migrations: [`${__dirname}/shared/infra/typeorm/migrations/*{.ts,.js}`],
-  seeds: [`${__dirname}/shared/infra/typeorm/seeds/MainSeeder{.ts,.js}`],
+  entities: [`${__dirname}/modules/**/infra/typeorm/entities/*{.js,.ts}`],
+  migrations: [`${__dirname}/shared/infra/typeorm/migrations/*{.js,.ts}`],
+  seeds: [`${__dirname}/shared/infra/typeorm/seeds/MainSeeder{.js,.ts}`],
   factories: [
     `${__dirname}/shared/infra/typeorm/seeds/factories/**/*{.ts,.js}`,
   ],

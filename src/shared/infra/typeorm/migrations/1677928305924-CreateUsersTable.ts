@@ -3,6 +3,7 @@ import { MigrationInterface, QueryRunner, Table } from 'typeorm'
 export default class CreateUsersTable1677928305924
   // eslint-disable-next-line prettier/prettier
   implements MigrationInterface {
+  // eslint-disable-next-line prettier/prettier
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
