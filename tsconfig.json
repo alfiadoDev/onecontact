@@ -17,6 +17,9 @@
       ],
       "@shared/*": [
         "shared/*"
+      ],
+      "@data-source/*": [
+        "shared/infra/typeorm/*"
       ]
     },
     "esModuleInterop": true,
