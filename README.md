@@ -45,6 +45,8 @@ shared: onde fica todo codigo, modulos... que iremos partilhar por toda aplicaç
 
 # Instalação
 
+Pode usar o gerenciador de pacotes que preferir: ```yarn ou npm```. Eu vou usar ```yarn```.
+
 Para rodar o projecto apos clonar o repositorio pode executar os seguintes comandos na raiz do projecto:
 ```
 yarn install
