@@ -18,26 +18,36 @@ const listContactsController = new ListContactsController()
 
 contactRoutes.post(
   '/',
-  celebrate({
-    [Segments.BODY]: {
-      name: Joi.string().required(),
-      number: Joi.string().required(),
+  celebrate(
+    {
+      [Segments.BODY]: {
+        name: Joi.string().required(),
+        number: Joi.string().required(),
+      },
     },
-  }),
+    {
+      abortEarly: false,
+    },
+  ),
   ensureAuthenticate,
   createContactController.handle,
 )
 contactRoutes.put(
   '/:contact_id',
-  celebrate({
-    [Segments.BODY]: {
-      name: Joi.string().required(),
-      number: Joi.string().required(),
+  celebrate(
+    {
+      [Segments.BODY]: {
+        name: Joi.string().required(),
+        number: Joi.string().required(),
+      },
+      [Segments.PARAMS]: {
+        contact_id: Joi.string().uuid().required(),
+      },
     },
-    [Segments.PARAMS]: {
-      contact_id: Joi.string().uuid().required(),
+    {
+      abortEarly: false,
     },
-  }),
+  ),
   ensureAuthenticate,
   updateContactController.handle,
 )

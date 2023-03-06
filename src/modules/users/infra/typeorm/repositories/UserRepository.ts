@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 // eslint-disable-next-line import/no-unresolved
 import AppDataSource from '@data/data-source'
+import { ICreateUserDTO } from '@modules/users/dtos/ICreateUserDTO'
 import { IUserRepository } from '@modules/users/repositories/IUserRepository'
 import { Repository } from 'typeorm'
 
@@ -12,6 +13,14 @@ class UserRepository implements IUserRepository {
 
   constructor() {
     this.repository = AppDataSource.getRepository(User)
+  }
+
+  async create(data: ICreateUserDTO): Promise<User> {
+    const user = this.repository.create(data)
+
+    await this.repository.save(user)
+
+    return user
   }
 
   async findByEmail(email: string): Promise<User | null> {
